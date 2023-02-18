@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website</title>
+</head>
+<body>
+    <button><input class="search"></button>
+    
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<style class="css">
+    .search{
+    position: relative;
+     width:15px;
+    height:15px; 
+    border-radius: 50%;
+    padding: 10px;
+    transition-duration: 500ms;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font:bold;
+    border: 3px solid white;
+    overflow: hidden;
+    background-image:url(/search-13-xxl.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-color: rgb(77, 57, 57);
+    background-position: 45% 50%;
+    }
+    .search:hover{
+        border: 2px solid #a6fc07;
+        border-style:solid;
+    }
+    .search:focus{
+        width: 500px;
+        height:15px;
+        border-radius: 50px;
+        cursor: text;
+        padding-left: 40px;
+        color:rgb(255, 252, 252);
+        outline: none;
+        background-color: transparent;
+        background-image: url(/search-13-xxl.png) no-repeat;
+        bakgorund-size: 22px;
+        background-position: 10px 50%;
+     }
+     button{
+        background-color: rgb(77, 57, 57);
+        height:5cm;
+        width:100%;
+        padding-bottom: 100px;
+     }
+</style>
+</body></html>
